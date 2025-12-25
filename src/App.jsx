@@ -7,6 +7,8 @@ import Notfound from './pages/Notfound';
 import Home from './pages/Home';
 
 const App = () => {
+  const [id,setId] = useState(0)
+
   return (
     <div>
       <BrowserRouter>
@@ -16,6 +18,7 @@ const App = () => {
           <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/create' element={<Create />}/>
+              <Route path='/edit/:id' element={<Edit id={id}/>} />
               <Route path='*' element={<Notfound/>}/>
           </Routes>
           <div>
